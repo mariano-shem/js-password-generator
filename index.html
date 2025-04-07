@@ -8,7 +8,37 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  
+  <main>
+    <h1>Password Generator</h1>
+    <form id="mainForm">
+      <fieldset>
+        <legend>Password Generator</legend>
+        <input type="text" contenteditable="false" readonly>
+        <div>
+          <input type="range" name="" id="">
+          <input type="number" min="8" max="32" style="width: 32px;">
+        </div>
+        <div>
+          <label for="">Strength: </label>
+          <meter value="0.5" min="0" max="1"></meter>
+        </div>
+        <div>
+          <input type="checkbox" id="uppTgl">
+          <label for="uppTgl">Uppercase letters (A-Z)</label>
+        </div>
+        <div>
+          <input type="checkbox" id="numTgl">
+          <label for="numTgl">Numbers (0-9)</label>
+        </div>
+        <div>
+          <input type="checkbox" id="symTgl">
+          <label for="symTgl">Symbols (!@#$%...)</label>
+        </div>
+        <button type="submit">Generate</button>
+      </fieldset>  
+    </form>
+  </main>
+
   <script type="module" src="js/index.js"></script>
 </body>
 </html>
