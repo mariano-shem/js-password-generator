@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>shem.dev - Password Generator</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.svg">
-  <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-  <main>
-    <h1>Password Generator</h1>
-    <form id="mainForm">
-      <fieldset>
-        <legend>Password Generator</legend>
-        <input type="text" 
-       id="pwField" contenteditable="false" readonly>
-       <i class="fa-solid fa-copy"></i>
-        <div class="len-wrap">
-          <input type="range" id="charRng" min="8" max="16" value="12">
-          <label id="charNum">0</label>
-        </div>
-        <div>
-          <label for="">Strength: </label>
-          <meter value="0.5" min="0" max="1"></meter>
-        </div>
-        <div>
-          <input type="checkbox" id="uppTgl">
-          <label for="uppTgl">Uppercase letters (A-Z)</label>
-        </div>
-        <div>
-          <input type="checkbox" id="numTgl">
-          <label for="numTgl">Numbers (0-9)</label>
-        </div>
-        <div>
-          <input type="checkbox" id="symTgl">
-          <label for="symTgl">Symbols (!@#$%...)</label>
-        </div>
-        <button type="submit" id="genBtn">Generate</button>
-      </fieldset>  
-    </form>
-  </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shem.dev - Password Generator</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.svg" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Password Generator</h1>
+      <form id="mainForm">
+        <fieldset>
+          <legend>Password Generator</legend>
+          <input type="text" id="pwField" contenteditable="false" readonly />
+          <i class="fa-solid fa-copy"></i>
+          <div class="len-wrap">
+            <input type="range" id="charRng" min="8" max="16" value="12" />
+            <label id="charNum">0</label>
+          </div>
+          <div>
+            <label for="">Strength: </label>
+            <meter value="0.5" min="0" max="1"></meter>
+          </div>
+          <div>
+            <input type="checkbox" id="uppTgl" />
+            <label for="uppTgl">Uppercase letters (A-Z)</label>
+          </div>
+          <div>
+            <input type="checkbox" id="numTgl" />
+            <label for="numTgl">Numbers (0-9)</label>
+          </div>
+          <div>
+            <input type="checkbox" id="symTgl" />
+            <label for="symTgl">Symbols (!@#$%...)</label>
+          </div>
+          <button type="submit" id="genBtn">Generate</button>
+        </fieldset>
+      </form>
+    </main>
 
-  <script type="module" src="js/index.js"></script>
-  <script src="https://kit.fontawesome.com/1a53385339.js" crossorigin="anonymous"></script>
-</body>
+    <script type="module" src="js/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1a53385339.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
