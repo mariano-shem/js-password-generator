@@ -13,10 +13,12 @@
     <form id="mainForm">
       <fieldset>
         <legend>Password Generator</legend>
-        <input type="text" contenteditable="false" readonly>
-        <div>
-          <input type="range" name="" id="">
-          <input type="number" min="8" max="32" style="width: 32px;">
+        <input type="text" 
+       id="pwField" contenteditable="false" readonly>
+       <i class="fa-solid fa-copy"></i>
+        <div class="len-wrap">
+          <input type="range" id="charRng" min="8" max="16" value="12">
+          <label id="charNum">0</label>
         </div>
         <div>
           <label for="">Strength: </label>
@@ -34,11 +36,12 @@
           <input type="checkbox" id="symTgl">
           <label for="symTgl">Symbols (!@#$%...)</label>
         </div>
-        <button type="submit">Generate</button>
+        <button type="submit" id="genBtn">Generate</button>
       </fieldset>  
     </form>
   </main>
 
   <script type="module" src="js/index.js"></script>
+  <script src="https://kit.fontawesome.com/1a53385339.js" crossorigin="anonymous"></script>
 </body>
 </html>
