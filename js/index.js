@@ -9,9 +9,10 @@ import generateChar from "./generate-password.js";
 
 const $mainForm = document.querySelector("#mainForm");
 const $pwField = document.querySelector("#pwField");
-const $copyPw = document.querySelector(".fa-copy");
+const $copyPw = document.querySelector(".output-copy");
 const $charRng = document.querySelector("#charRng");
 const $charNum = document.querySelector("#charNum");
+const $rngFill = document.querySelector(".slider-fill")
 const $uppTgl = document.querySelector("#uppTgl");
 const $numTgl = document.querySelector("#numTgl");
 const $symTgl = document.querySelector("#symTgl");
@@ -29,7 +30,8 @@ $copyPw.addEventListener("click", () => {
   alert("Copied to clipboard!")
  })
 $charRng.addEventListener("input", (e) => {
-   $charNum.textContent = e.target.value;
+  $charNum.textContent = Number(e.target.value) + 7;
+  $rngFill.style.width = `${e.target.value * 4}%`
  })
 
 // MAIN: Generate random password
@@ -47,4 +49,5 @@ $genBtn.addEventListener("click", () => {
 
   let fullPw = generateChar(pwLength, selectedTypes)
   $pwField.value = fullPw;
+  $copyPw.style.display = "inline"
 })

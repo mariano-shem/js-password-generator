@@ -6,44 +6,54 @@
     <title>shem.dev - Password Generator</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.svg" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <main>
       <h1>Password Generator</h1>
       <form id="mainForm">
-        <fieldset>
-          <legend>Password Generator</legend>
-          <input type="text" id="pwField" contenteditable="false" readonly />
-          <i class="fa-solid fa-copy"></i>
-          <div class="len-wrap">
-            <input type="range" id="charRng" min="8" max="16" value="8" />
+
+        <section class="output-wrap">
+          <input type="text"
+            id="pwField"
+            class="output"
+            contenteditable="false"
+            readonly
+          />
+          <i class="output-copy"><img src="./assets/copy-solid.svg" alt="Copy"></i>
+        </section>
+
+        <section class="length-wrap">
+          <div class="length-label">
+            <h2>Length</h2>
             <label id="charNum">8</label>
           </div>
-          <div>
-            <label for="">Strength: </label>
-            <meter value="0.5" min="0" max="1"></meter>
-          </div>
-          <div>
-            <input type="checkbox" id="uppTgl" />
-            <label for="uppTgl">Uppercase letters (A-Z)</label>
-          </div>
-          <div>
-            <input type="checkbox" id="numTgl" />
-            <label for="numTgl">Numbers (0-9)</label>
-          </div>
-          <div>
-            <input type="checkbox" id="symTgl" />
-            <label for="symTgl">Symbols (!@#$%...)</label>
-          </div>
-          <button type="submit" id="genBtn">Generate</button>
-        </fieldset>
+          <input type="range"
+            id="charRng"
+            min="1"
+            max="25"
+            value="1" 
+          />
+          <div class="slider-fill"></div>
+        </section>
+        <div>
+          <input type="checkbox" id="uppTgl" />
+          <label for="uppTgl">Include Uppercase Letters</label>
+        </div>
+        <div>
+          <input type="checkbox" id="numTgl" />
+          <label for="numTgl">Include Numbers</label>
+        </div>
+        <div>
+          <input type="checkbox" id="symTgl" />
+          <label for="symTgl">Include Symbols</label>
+        </div>
+        <button type="submit" id="genBtn">GENERATE PASSWORD</button>
       </form>
     </main>
 
     <script type="module" src="js/index.js"></script>
-    <script
-      src="https://kit.fontawesome.com/1a53385339.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
