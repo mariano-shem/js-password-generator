@@ -56,8 +56,15 @@ h1 {
 }
 
 input {
-  font-size: 1.125rem;
+  font-size: 1rem;
   accent-color: var(--primary);
+}
+
+input[type=checkbox] {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .output-wrap {
@@ -148,4 +155,33 @@ input[type=range]::-moz-range-thumb {
   margin-bottom: -1.25rem;
 
   pointer-events: none;
+}
+
+.toggle-wrap {
+  position: relative;
+  height: 2rem;
+  margin-bottom: 1.125rem;
+}
+
+.toggle-wrap > label {
+  display: inline-flex;
+  align-items: center;
+
+  height: 2rem;
+  padding-left: 2.75rem;
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -1rem;
+
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
