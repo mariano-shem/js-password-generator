@@ -1,5 +1,6 @@
 import generateChar from "./generate-password.js";
 import toggleCheckbox from "./checkbox-styling.js";
+import displayStrength from "./str-indicator.js";
 import { 
   UPPER_CASE_CHAR, 
   LOWER_CASE_CHAR, 
@@ -19,6 +20,10 @@ const $numTgl = document.querySelector("#numTgl");
 const $symTgl = document.querySelector("#symTgl");
 const $genBtn = document.querySelector("#genBtn");
 
+let pwLength;
+let checkUppTgl;
+let checkNumTgl;
+let checkSymTgl;
 /**
  * Event Listeners:
  *  $mainForm - disable page refresh upon submit
@@ -38,19 +43,30 @@ $charRng.addEventListener("input", (e) => {
 $checkbox.forEach((box) => {
   box.addEventListener("change", toggleCheckbox)
 })
+$mainForm.addEventListener("input", displayStrength)
 
 // MAIN: Generate random password
 $genBtn.addEventListener("click", () => {
   let selectedTypes = LOWER_CASE_CHAR;
 
-  let pwLength = Number($charRng.value) + 7;
-  let checkUppTgl = $uppTgl.checked;
-  let checkNumTgl = $numTgl.checked;
-  let checkSymTgl = $symTgl.checked;
 
-  if (checkUppTgl) { selectedTypes = selectedTypes.concat(UPPER_CASE_CHAR) }
-  if (checkNumTgl) { selectedTypes = selectedTypes.concat(NUMBER_CHAR) }
-  if (checkSymTgl) { selectedTypes = selectedTypes.concat(SYMBOL_CHAR) }
+  pwLength = Number($charRng.value) + 7;
+  checkUppTgl = $uppTgl.checked;
+  checkNumTgl = $numTgl.checked;
+  checkSymTgl = $symTgl.checked;
+
+  if (checkUppTgl) { 
+    selectedTypes = selectedTypes.concat(UPPER_CASE_CHAR);
+  }
+  if (checkNumTgl) { 
+    selectedTypes = selectedTypes.concat(NUMBER_CHAR);
+  }
+  if (checkSymTgl) { 
+    selectedTypes = selectedTypes.concat(SYMBOL_CHAR)
+  }
+
+  if (pwLength >= 16) {
+  }
 
   let fullPw = generateChar(pwLength, selectedTypes)
   $pwField.value = fullPw;
