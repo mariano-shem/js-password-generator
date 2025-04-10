@@ -39,6 +39,10 @@ button {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background-color: var(--app-background);
   height: 530px;
   min-width: 440px;
@@ -104,10 +108,10 @@ input[type=checkbox] {
   margin: 1rem 0;
 }
 
-.length-label {
+.length-label, .strength-label {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 input[type=range] {
@@ -152,7 +156,7 @@ input[type=range]::-moz-range-thumb {
   height: 0.5rem;
   bottom: 50%;
   left: 0;
-  margin-bottom: -1.25rem;
+  margin-bottom: -1.5rem;
 
   pointer-events: none;
 }
@@ -184,4 +188,18 @@ input[type=range]::-moz-range-thumb {
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
+}
+
+.level-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.level {
+  display: inline-block;
+  background-color: var(--primary);
+  height: 0.75rem;
+  width:  22%;
+  border-radius: 0.1rem;
 }

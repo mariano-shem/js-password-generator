@@ -14,7 +14,7 @@
     <main>
       <h1>Password Generator</h1>
       <form id="mainForm">
-
+        <!-- Input text to display generated password -->
         <section class="output-wrap">
           <input type="text"
             id="pwField"
@@ -24,7 +24,7 @@
           />
           <i class="output-copy"><img src="./assets/copy-solid.svg" alt="Copy"></i>
         </section>
-
+        <!-- Slider to adjust password length -->
         <section class="length-wrap">
           <div class="length-label">
             <h2>Length</h2>
@@ -38,7 +38,7 @@
           />
           <div class="slider-fill"></div>
         </section>
-
+        <!-- Checkboxes to customize password -->
         <section class="toggle-wrap">
           <input type="checkbox" id="uppTgl" />
           <img src="./assets/square-regular.svg" alt="O" class="checkmark">
@@ -56,7 +56,20 @@
           <img src="./assets/square-regular.svg" alt="O" class="checkmark">
           <label for="symTgl">Include Symbols</label>
         </section>
-
+        <!-- Password strength indicator -->
+        <section class="strength-wrap">
+          <div class="strength-label">
+            <h2>Strength</h2>
+            <label id="strNum"></label>
+          </div>
+          <div class="level-wrap">
+            <span class="level str-1"></span>
+            <span class="level str-2"></span>
+            <span class="level str-3"></span>
+            <span class="level str-4"></span>
+          </div>
+        </section>
+        <!-- Generate button -->
         <button type="submit" id="genBtn">GENERATE PASSWORD</button>
       </form>
     </main>
